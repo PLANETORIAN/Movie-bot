@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors"; // Import the CORS package
 import { config } from "dotenv";
 import jsonParser from "./middlewares/jsonParser.js";
-import cineBuddyAi from "./routes/cineBuddyAi.js";
+import serviceHubAi from "./routes/serviceHubAi.js";
 
 const app = express();
 config();
@@ -19,12 +19,12 @@ app.use(cors(corsOptions)); // Use the CORS middleware with options
 app.use(jsonParser);
 app.get("/", (req, res) => {
     res.send({
-        message: "Project CineBuddy Server",
+        message: "Project Service_Hub Server",
         health: "ok",
     });
 });
 
-app.use("/api/CineBuddyAi", cineBuddyAi);
+app.use("/api/ServiceHubAI", serviceHubAi);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
