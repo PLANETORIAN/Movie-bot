@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors"; // Import the CORS package
 import { config } from "dotenv";
 import jsonParser from "./middlewares/jsonParser.js";
-import serviceHubAi from "./routes/serviceHubAi.js";
+import serviceHubAi from "./routes/cineBuddyAi.js";
 
 const app = express();
 config();
